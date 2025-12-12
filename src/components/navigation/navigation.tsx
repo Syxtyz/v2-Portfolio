@@ -6,16 +6,23 @@ import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGrou
 import { ModeToggle } from "../theme/theme-toggle"
 import { Separator } from "../ui/separator"
 import { useRouter } from "next/navigation"
+import React from "react"
 
 export function Navigation() {
     const router = useRouter()
+    const [collapsed, setCollapsed] = React.useState(true)
 
     return (
-        <Sidebar collapsible="icon" className="border-red-500">
+        <Sidebar collapsible="icon" className="">
             <SidebarHeader>
-                <SidebarGroup>
-                    <SidebarGroupLabel>My Portfolio</SidebarGroupLabel>
-                </SidebarGroup>
+                <div className="flex items-center">
+                    {collapsed && (
+                        <SidebarGroup>
+                            <SidebarGroupLabel>My Portfolio</SidebarGroupLabel>
+                        </SidebarGroup>
+                    )}
+                    <SidebarTrigger onClick={() => setCollapsed(!collapsed)} />
+                </div>
             </SidebarHeader>
 
             <Separator />
@@ -25,7 +32,16 @@ export function Navigation() {
                     <SidebarGroupContent className="mb-2">
                         <SidebarMenu className="grid gap-2">
                             {navigation.map((item) => (
-                                <SidebarMenuButton key={item.name} onClick={() => router.push(item.href)}>
+                                <SidebarMenuButton
+                                    key={item.name}
+                                    onClick={() => {
+                                        const id = item.href.replace("#", "")
+                                        const element = document.getElementById(id)
+                                        if (element) {
+                                            element.scrollIntoView({ behavior: "smooth", block: "start" })
+                                        }
+                                    }}
+                                >
                                     <item.icon className="h-4 w-4" />
                                     <p className="text-sm">{item.name}</p>
                                 </SidebarMenuButton>

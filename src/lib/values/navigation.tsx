@@ -1,8 +1,10 @@
-import { AwardIcon, BookIcon, CpuIcon, HomeIcon } from "lucide-react";
+import { AwardIcon, BookIcon, CpuIcon, HomeIcon, UserIcon } from "lucide-react";
 
 export const navigation = [
-    { name: "About", href: "/", icon: HomeIcon},
-    { name: "Tech Stack", href: "tech-stack", icon: CpuIcon },
-    { name: "Certificates", href: "/certificate", icon: AwardIcon },
-    { name: "Journal", href: "/journal", icon: BookIcon }
+    // { name: "Landing", href: "#landing" },
+    { name: "Landing", href: "#landing", icon: HomeIcon},
+    { name: "About", href: "#about", icon: UserIcon},
+    { name: "Tech Stack", href: "#tech-stack", icon: CpuIcon },
+    { name: "Certificates", href: "#certificates", icon: AwardIcon },
+    { name: "Journal", href: "#journal", icon: BookIcon }
 ]
