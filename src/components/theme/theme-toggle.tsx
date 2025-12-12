@@ -1,0 +1,36 @@
+"use client"
+
+import * as React from "react"
+import { Moon, Sun } from "lucide-react"
+import { useTheme } from "next-themes"
+
+import { Button } from "@/components/ui/button"
+import { SidebarMenuButton } from "../ui/sidebar"
+
+
+export function ModeToggle() {
+    const { theme, setTheme } = useTheme()
+    const [mounted, setMounted] = React.useState(false)
+
+    React.useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) return
+
+    return (
+        <SidebarMenuButton className="mt-2" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+            {theme === "dark" ? (
+                <>
+                    <Sun className="h-4 w-4" />
+                    <p className="text-sm">Light Mode</p>
+                </>
+            ) : (
+                <>
+                    <Moon className="h-4 w-4" />
+                    <p className="text-sm">Dark Mode</p>
+                </>
+            )}
+        </SidebarMenuButton>
+    )
+}
