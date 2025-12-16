@@ -1,5 +1,5 @@
-import NavigationContent from "@/components/landing/nav";
-import SectionContent from "@/components/landing/section";
+import NavigationContent from "./nav";
+import SectionContent from "./section";
 
 export default function LandingContent() {
     return (
