@@ -1,9 +1,11 @@
-import MainContent from "@/components/landing/main";
+import NavigationContent from "@/components/landing/nav";
+import SectionContent from "@/components/landing/section";
 
 export default function LandingContent() {
     return (
-        <main id="landing">
-            <MainContent/>
+        <main id="landing" className="relative">
+            <SectionContent/>
+            <NavigationContent/>
         </main>
     )
 }

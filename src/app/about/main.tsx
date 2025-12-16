@@ -1,8 +1,8 @@
-import HeroContent from "@/components/about/hero";
+import HeroContent from "@/components/about/section";
 
 export default function AboutContent() {
     return (
-        <main id="about" className="rounded ">
+        <main id="About" className="rounded ">
             <HeroContent/>
         </main>
     )
