@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 
 export default function NavigationContent() {
     const handleScroll = () => {
-        const element = document.getElementById("about")
+        const element = document.getElementById("certificates")
         if (element) {
             element.scrollIntoView({ behavior: "smooth", block: "start" })
         }
@@ -15,7 +15,7 @@ export default function NavigationContent() {
         <div className="absolute bottom-4 left-1/2 -translate-1/2 cursor-pointer opacity-60 hover:opacity-100"
             onClick={handleScroll}
         >
-            <p>Explore</p>
+            <p>Certificates</p>
             <motion.div
                 animate={{ y: [0, 5, 0] }}
                 transition={{

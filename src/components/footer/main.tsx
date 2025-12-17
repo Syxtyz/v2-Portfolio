@@ -8,7 +8,7 @@ export default function FooterContent() {
         <div className="grid gap-4">
             <div className="border" />
             <div className="flex justify-between">
-                <Socials isFooter={true}/>
+                <Socials horizontal={true} showLabel={false}/>
                 <SectionContent />
             </div>
         </div>

@@ -1,0 +1,41 @@
+export function CertificateContent() {
+    return (
+        <div id="certificates" className="px-4 lg:px-32">
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+            <p>Hey</p>
+        </div>
+    )
+}

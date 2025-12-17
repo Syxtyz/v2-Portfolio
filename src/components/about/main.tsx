@@ -1,7 +1,6 @@
 "use client"
 
 import { useInView } from "react-intersection-observer";
-import HeaderContent from "./header";
 import SectionContent from "./section";
 
 export default function AboutContent() {
@@ -12,7 +11,10 @@ export default function AboutContent() {
 
     return (
         <div ref={ref} id="about" className="h-screen flex flex-col">
-            <HeaderContent />
+            <header className="mt-4">
+                <p className="text-2xl font-semibold font-loto">About</p>
+                <p className="text-foreground/80 text-sm">A little about me.</p>
+            </header>
             {inView && (
                 <SectionContent />
             )}

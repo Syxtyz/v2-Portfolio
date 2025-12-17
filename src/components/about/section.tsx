@@ -10,7 +10,7 @@ export default function SectionContent() {
     const RADIUS = 80
 
     return (
-        <div className="flex flex-1 h-full gap-4 pb-8 pt-4 items-center">
+        <div className="flex flex-1 h-full gap-4 pb-6 pt-4 items-center">
             <div className="flex-1 group h-full relative bg-[url('/images/background.jpg')] bg-size-[500%_100%] bg-left border-accent border-2 overflow-hidden">
                 <Panels label="Tweiqht" description="Real Name: Cejie Refamonte">
                     <Image
@@ -85,7 +85,7 @@ export default function SectionContent() {
 
             <div className="flex-1 group h-full relative bg-[url('/images/background.jpg')] bg-size-[500%_100%] bg-right border-accent border-2 overflow-hidden">
                 <Panels label="Socials" description="Let's Connect!">
-                    <Socials />
+                    <Socials/>
                 </Panels>
             </div>
         </div>
