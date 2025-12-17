@@ -1,3 +1,6 @@
+"use client"
+
+import { Socials } from "../ui/socials";
 import SectionContent from "./section";
 
 export default function FooterContent() {
@@ -5,7 +8,7 @@ export default function FooterContent() {
         <div className="grid gap-4">
             <div className="border" />
             <div className="flex justify-between">
-                <div className="text-sm">Socials Placeholder</div>
+                <Socials isFooter={true}/>
                 <SectionContent />
             </div>
         </div>
