@@ -1,8 +1,8 @@
 import SectionContent from "./section";
 
-export default function MilestoneContent() {
+export default function MainContent() {
     return (
-        <div>
+        <div className="p-4">
             <SectionContent/>
         </div>
     )

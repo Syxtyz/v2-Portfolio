@@ -9,7 +9,7 @@ export default function SectionContent() {
                 <p className="text-6xl md:text-8xl font-loto font-semibold">Tweiqht</p>
                 <p className="text-sm md:text-2xl font-Castoro opacity-80">Software Developer</p>
                 <div className="border -mx-2" />
-                <p className="text-sm md:text-3xl opacity-80 relative -top-2 font-loto">Knowledge grows where curiosity refuses to fade</p>
+                <p className="text-sm md:text-3xl opacity-80 relative -top-2 font-loto">Knowledge Grows Where Curiosity Refuses to Fade</p>
             </span>
             <div className="flex gap-2">
                 <a href="/resume.pdf" target="_blank" rel="noopener norefferer">

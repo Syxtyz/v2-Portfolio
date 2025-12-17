@@ -1,4 +1,4 @@
-import MainContent from "@/components/about/main";
+import MainContent from "@/components/about/page/main";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function AboutPage() {

@@ -1,8 +1,11 @@
+import HeaderContent from "./header";
 import SectionContent from "./section";
 
-export default function MainContent() {
+export default function AboutContent() {
     return (
-        <div className="p-4">
+        <div id="about" className="h-screen flex flex-col">
+            <HeaderContent/>
+
             <SectionContent/>
         </div>
     )

@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 
 export default function NavigationContent() {
     const handleScroll = () => {
-        const element = document.getElementById("milestone")
+        const element = document.getElementById("about")
         if (element) {
             element.scrollIntoView({ behavior: "smooth", block: "start" })
         }
