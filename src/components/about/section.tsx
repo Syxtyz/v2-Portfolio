@@ -23,7 +23,7 @@ export default function SectionContent() {
                 </Panels>
             </div>
 
-            <div className="flex-1 group h-full relative bg-[url('/images/background.jpg')] bg-size-[500%_100%] bg-position-[25%_center] border-accent border-2 overflow-hidden">
+            <div className="flex-1 group h-full relative bg-[url('/images/background.jpg')] bg-size-[500%_100%] bg-position-[25%_center] border-accent border-2 overflow-hidden hidden lg:flex">
                 <Panels label="Tech Stack" description="Tools & Technologies used">
                     <motion.div
                         className="relative w-56 h-56 flex items-center justify-center"
@@ -79,11 +79,11 @@ export default function SectionContent() {
                 </Panels>
             </div>
 
-            <div className="flex-1 group h-full relative bg-[url('/images/background.jpg')] bg-size-[500%_100%] bg-position-[75%_center] border-accent border-2 overflow-hidden">
+            <div className="flex-1 group h-full relative bg-[url('/images/background.jpg')] bg-size-[500%_100%] bg-position-[75%_center] border-accent border-2 overflow-hidden hidden lg:flex">
                 <Panels label="Certifications" description="Credentials & Achievements"/>
             </div>
 
-            <div className="flex-1 group h-full relative bg-[url('/images/background.jpg')] bg-size-[500%_100%] bg-right border-accent border-2 overflow-hidden">
+            <div className="flex-1 group h-full relative bg-[url('/images/background.jpg')] bg-size-[500%_100%] bg-right border-accent border-2 overflow-hidden hidden md:flex">
                 <Panels label="Socials" description="Let's Connect!">
                     <Socials/>
                 </Panels>

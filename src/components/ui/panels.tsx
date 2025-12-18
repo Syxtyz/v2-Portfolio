@@ -9,7 +9,7 @@ export function Panels({ label, description, children }: { label: string, descri
                     {children}
                 </div>
             </div>
-            <p className="absolute font-semibold p-6 text-foreground bottom-0 duration-300 group-hover:-translate-y-11.5 mb-2 font-loto opacity-60 group-hover:opacity-100">
+            <p className="absolute font-semibold p-6 text-foreground bottom-8 lg:bottom-0 duration-300 group-hover:-translate-y-11.5 mb-2 font-loto opacity-60 group-hover:opacity-100">
                 {label}
             </p>
             <AboutLink description={description}/>
