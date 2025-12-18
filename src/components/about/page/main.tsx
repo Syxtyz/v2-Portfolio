@@ -4,7 +4,7 @@ import SectionContent from "./section";
 
 export default function MainContent() {
     return (
-        <div className="relative h-screen p-4 flex flex-col gap-4 lg:px-32">
+        <div className="h-fit lg:h-screen relative grid gap-4">
             <HeaderContent />
             <SectionContent />
             <NavigationContent />

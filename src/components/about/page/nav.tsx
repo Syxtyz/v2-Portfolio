@@ -12,7 +12,7 @@ export default function NavigationContent() {
     }
 
     return (
-        <div className="absolute bottom-4 left-1/2 -translate-1/2 cursor-pointer opacity-60 hover:opacity-100"
+        <div className="cursor-pointer mb-4 opacity-60 hover:opacity-100 flex flex-col items-center justify-center"
             onClick={handleScroll}
         >
             <p>Certificates</p>
@@ -24,7 +24,7 @@ export default function NavigationContent() {
                     repeatDelay: 0.2
                 }}
             >
-                <ChevronDown className="mx-auto" />
+                <ChevronDown/>
             </motion.div>
         </div>
     )

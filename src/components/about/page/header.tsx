@@ -1,12 +1,14 @@
+"use client"
+
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 
 export default function HeaderContent() {
     return (
-        <div className="flex justify-between items-center h-fit">
-            <div className="grid gap-1">
-                <div className="flex items-center gap-4">
-                    <p className="text-2xl font-semibold font-loto">About Me</p>
+        <div className="flex flex-col md:flex-row justify-between h-fit gap-2">
+            <div className="order-1 md:order-0 grid gap-1">
+                <div className="flex gap-4 items-center">
+                    <p className="text-lg md:text-2xl font-semibold font-loto">About Me</p>
                     <div className="border h-8" />
                     <p className="text-foreground/80 text-sm">A deeper look at who I am.</p>
                 </div>

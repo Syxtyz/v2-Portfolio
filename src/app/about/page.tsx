@@ -5,10 +5,10 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function AboutPage() {
     return (
-        <ScrollArea className="h-screen bg-background">
-            <MainContent />
-            <CertificateContent />
-            <div className="mx-4 mt-4 lg:mx-32">
+        <ScrollArea className="h-full bg-background">
+            <div className="flex flex-col gap-4 p-4 lg:px-32 min-h-full">
+                <MainContent />
+                <CertificateContent />
                 <FooterContent />
             </div>
         </ScrollArea>
