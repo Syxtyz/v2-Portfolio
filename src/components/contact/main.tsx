@@ -8,7 +8,7 @@ import { CalLink } from "@/lib/values/links";
 export function ContactContent() {
     return (
         <div className="flex justify-center my-16">
-            <div className="p-4 px-8 lg:p-16 lg:px-32 rounded-2xl flex flex-col items-center gap-4 bg-[url('/parabolic-pentagon.svg')] bg-center bg-no-repeat bg-cover border-2">
+            <div className="p-4 px-8 md:p-8 md:px-16 lg:p-16 lg:px-32 rounded-2xl flex flex-col items-center gap-4 bg-[url('/parabolic-pentagon.svg')] bg-center bg-no-repeat bg-cover border-2">
                 <span className="-space-y-1.5 text-center px-2">
                     <p className="text-2xl lg:text-5xl font-loto font-semibold">Let's Connect</p>
                     <div className="border -mx-2 hidden md:flex" />
