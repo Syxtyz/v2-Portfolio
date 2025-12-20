@@ -3,6 +3,7 @@ import LandingContent from "@/components/landing/main";
 import MilestoneContent from "@/components/milestone/main";
 import FooterContent from "@/components/footer/main";
 import AboutContent from "@/components/about/main";
+import { ContactContent } from "@/components/contact/main";
 
 export default function Home() {
 
@@ -12,6 +13,7 @@ export default function Home() {
         <LandingContent />
         <AboutContent />
         <MilestoneContent />
+        <ContactContent/>
         <FooterContent />
       </main>
     </ScrollArea>

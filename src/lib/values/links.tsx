@@ -6,3 +6,5 @@ export const Links = [
     { platform: "Instagram", link: "https://www.instagram.com/sejii8/", icon: <InstagramIcon size={16}/>},
     { platform: "Linkedin", link: "https://www.linkedin.com/in/tweiqht/", icon: <LinkedinIcon size={16}/>}
 ]
+
+export const CalLink = "https://cal.com/tweiqht"
