@@ -5,7 +5,6 @@ import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
-import { SidebarMenuButton } from "../ui/sidebar"
 
 
 export function ModeToggle() {
@@ -19,7 +18,7 @@ export function ModeToggle() {
     if (!mounted) return
 
     return (
-        <SidebarMenuButton className="mt-2" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+        <Button className="mt-2" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
             {theme === "dark" ? (
                 <>
                     <Sun className="h-4 w-4" />
@@ -31,6 +30,6 @@ export function ModeToggle() {
                     <p className="text-sm">Dark Mode</p>
                 </>
             )}
-        </SidebarMenuButton>
+        </Button>
     )
 }
