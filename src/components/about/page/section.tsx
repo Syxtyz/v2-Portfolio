@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { TechStack } from "./techstack";
 import { Socials } from "@/components/ui/socials";
+import { Links } from "@/lib/values/links";
 
 // import Image from "next/image";
 // import { TechStack } from "./techstack";
@@ -88,12 +89,21 @@ export default function SectionContent() {
 
                 <div className="grid gap-1">
                     <p className="font-semibold text-foreground">Socials</p>
-                    <Socials horizontal={true} gap={4} />
+                    <div className="grid grid-cols-2 grid-rows-2 md:flex gap-2">
+                        {Links.map((item, index) => (
+                            <a key={index} target="_blank" rel="noopener noreferrer">
+                                <Button onClick={() => window.open(item.link, "_blank")} variant={"ghost"}>
+                                    {item.icon}
+                                    {item.platform}
+                                </Button>
+                            </a>
+                        ))}
+                    </div>
                 </div>
             </section>
 
             <section className="flex-1 lg:border lg:rounded-3xl p-4">
-                <TechStack/>
+                <TechStack />
             </section>
         </div>
     )
