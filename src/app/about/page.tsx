@@ -1,15 +1,18 @@
 import { CertificateContent } from "@/components/about/page/certificates";
 import MainContent from "@/components/about/page/main";
+import { ContactContent } from "@/components/contact/main";
 import FooterContent from "@/components/footer/main";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function AboutPage() {
     return (
         <ScrollArea className="h-full bg-background">
-            <div className="grid gap-4 p-4 lg:px-32 min-h-full">
+            <div className="grid gap-4 p-4 lg:px-32 h-screen">
                 <MainContent />
                 <CertificateContent />
+                    <ContactContent/>
                 <FooterContent />
+                
             </div>
         </ScrollArea>
     )

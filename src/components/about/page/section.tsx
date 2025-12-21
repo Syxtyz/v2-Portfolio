@@ -57,23 +57,16 @@ import { Links } from "@/lib/values/links";
 
 export default function SectionContent() {
     return (
-        // <div className="w-full flex flex-col lg:flex-row gap-12 lg:gap-6">
         <div className="w-full flex flex-col lg:flex-row gap-12 lg:gap-6">
-            <section className="flex-1 grid justify-center text-center gap-8 lg:border lg:rounded-3xl">
+            <section className="flex-1 grid justify-center text-center gap-8 lg:border lg:rounded-3xl p-4">
                 <Image src={"/images/picture.png"} alt="My Profile Picture" width={300} height={300} className="rounded-full" />
                 <p className="font-loto text-2xl text-foreground/80">Software Developer</p>
-                <div className="grid md:flex gap-4 justify-center">
-                    <a href="/resume.pdf" target="_blank" rel="noopener norefferer">
-                        <Button className="w-fit group cursor-pointer" variant={"outline"}>
-                            <p className="ml-1">Resume</p>
-                            <ArrowUpRight className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
-                        </Button>
-                    </a>
-                    <Button className="w-fit group cursor-pointer mx-auto sm:mx-0" variant={"outline"}>
-                        <p className="ml-1">Contact</p>
+                <a href="/resume.pdf" target="_blank" rel="noopener norefferer">
+                    <Button className="w-fit group cursor-pointer" variant={"outline"}>
+                        <p className="ml-1">Resume</p>
                         <ArrowUpRight className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
                     </Button>
-                </div>
+                </a>
             </section>
 
             <section className="flex-2 flex flex-col gap-8">
