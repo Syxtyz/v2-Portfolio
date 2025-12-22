@@ -12,12 +12,7 @@ import { ContactFormValues, contactSchema } from "@/lib/validators/contact";
 import { zodResolver } from "@hookform/resolvers/zod"
 
 export function ContactModal() {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors, isSubmitting },
-        reset
-    } = useForm<ContactFormValues>({ resolver: zodResolver(contactSchema) })
+    const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<ContactFormValues>({ resolver: zodResolver(contactSchema) })
 
     async function onSubmit(values: ContactFormValues) {
         const res = await fetch("/api/contact", {
