@@ -10,6 +10,7 @@ import { Textarea } from "../ui/textarea";
 import { useForm } from "react-hook-form"
 import { ContactFormValues, contactSchema } from "@/lib/validators/contact";
 import { zodResolver } from "@hookform/resolvers/zod"
+import { toast } from "sonner";
 
 export function ContactModal() {
     const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<ContactFormValues>({ resolver: zodResolver(contactSchema) })
@@ -21,7 +22,12 @@ export function ContactModal() {
             body: JSON.stringify(values)
         })
         if (res.ok) {
+            toast.success("Message sent")
             reset()
+        } else {
+            toast("Sorry, something went wrong", {
+                description: "Please try again"
+            })
         }
     }
 
