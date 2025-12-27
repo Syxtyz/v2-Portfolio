@@ -11,7 +11,9 @@ export default function AboutPage() {
                 <MainContent />
                 <CertificateContent />
                 <ContactContent />
-                <FooterContent />
+                <div className="pb-4">
+                    <FooterContent />
+                </div>
             </div>
         </ScrollArea>
     )

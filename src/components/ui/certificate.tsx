@@ -25,7 +25,6 @@ export function CertificateForm({
     const [isMobile, setIsMobile] = React.useState(false)
     const [mounted, setMounted] = React.useState(false)
 
-    // ✅ Run client-only logic AFTER hydration
     React.useEffect(() => {
         setMounted(true)
 
@@ -66,7 +65,6 @@ export function CertificateForm({
                 </p>
             </div>
 
-            {/* Desktop preview */}
             <AnimatePresence>
                 {!isMobile && hovered && (
                     <motion.div
@@ -83,16 +81,14 @@ export function CertificateForm({
                             <img
                                 src={imageSrc}
                                 onLoad={() => setLoading(false)}
-                                className={`rounded-lg shadow-xl transition-opacity ${
-                                    loading ? "opacity-0" : "opacity-100"
-                                }`}
+                                className={`rounded-lg shadow-xl transition-opacity ${loading ? "opacity-0" : "opacity-100"
+                                    }`}
                             />
                         </div>
                     </motion.div>
                 )}
             </AnimatePresence>
 
-            {/* Mobile modal */}
             <AnimatePresence>
                 {isMobile && openMobile && (
                     <motion.div
