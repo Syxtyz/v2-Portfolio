@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import React from "react";
 import { Button } from "../ui/button";
 import { Skeleton } from "../ui/skeleton";
+import Image from "next/image";
 
 interface CertificateProps {
     title: string
@@ -13,12 +14,7 @@ interface CertificateProps {
     imageSrc?: string
 }
 
-export function CertificateForm({
-    title,
-    certificate,
-    date,
-    imageSrc
-}: CertificateProps) {
+export function CertificateForm({ title, certificate, date, imageSrc }: CertificateProps) {
     const [hovered, setHovered] = React.useState(false)
     const [openMobile, setOpenMobile] = React.useState(false)
     const [loading, setLoading] = React.useState(true)
@@ -29,7 +25,7 @@ export function CertificateForm({
         setMounted(true)
 
         const checkMobile = () => {
-            setIsMobile(window.innerWidth < 768)
+            setIsMobile(window.innerWidth < 1024)
         }
 
         checkMobile()
@@ -41,24 +37,23 @@ export function CertificateForm({
     if (!mounted || !imageSrc) return null
 
     return (
-        <div
-            className="relative"
-            onMouseEnter={() => !isMobile && setHovered(true)}
-            onMouseLeave={() => !isMobile && setHovered(false)}
-        >
-            <div className="grid gap-2 md:cursor-pointer md:opacity-50 hover:opacity-100">
+        <div className="relative">
+            <div
+                className="grid gap-2 lg:cursor-pointer lg:opacity-50 hover:opacity-100"
+                onMouseEnter={() => !isMobile && setHovered(true)}
+                onMouseLeave={() => !isMobile && setHovered(false)}
+            >
                 <div>
                     <p className="font-semibold text-sm">{title}</p>
                     <p className="text-xs">Certificate of {certificate}</p>
                 </div>
 
-                <Button
-                    variant={isMobile ? "outline" : "ghost"}
-                    className="w-fit hover:bg-accent"
+                <button
+                    className="w-fit flex items-center gap-2 cursor-pointer border rounded-lg lg:border-0 p-2"
                     onClick={() => isMobile && setOpenMobile(true)}
                 >
                     <AwardIcon size={16} /> View Certificate
-                </Button>
+                </button>
 
                 <p className="mb-6 text-xs text-muted-foreground">
                     Date issued: {date}
@@ -78,11 +73,13 @@ export function CertificateForm({
                             {loading && (
                                 <Skeleton className="w-full h-150 rounded-lg" />
                             )}
-                            <img
+                            <Image
                                 src={imageSrc}
+                                alt="Certificate"
+                                width={600}
+                                height={600}
                                 onLoad={() => setLoading(false)}
-                                className={`rounded-lg shadow-xl transition-opacity ${loading ? "opacity-0" : "opacity-100"
-                                    }`}
+                                className={`rounded-lg shadow-xl transition-opacity ${loading ? "opacity-0" : "opacity-100"}`}
                             />
                         </div>
                     </motion.div>
