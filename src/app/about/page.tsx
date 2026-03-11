@@ -10,10 +10,10 @@ export default function AboutPage() {
             <div className="grid gap-4 p-4 lg:px-32 h-screen">
                 <MainContent />
                 <CertificateContent />
-                <ContactContent />
+                {/* <ContactContent />
                 <div className="pb-4">
                     <FooterContent />
-                </div>
+                </div> */}
             </div>
         </ScrollArea>
     )

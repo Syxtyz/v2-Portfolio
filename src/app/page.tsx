@@ -13,9 +13,15 @@ export default function Home() {
         <LandingContent />
         <AboutContent />
         <MilestoneContent />
-        <ContactContent/>
-        <FooterContent />
       </main>
+      {/* <div className="relative h-64">
+        <div className="absolute">
+          A top
+        </div>
+      </div>
+      <div>2nd</div> */}
+      <ContactContent />
+      <FooterContent />
     </ScrollArea>
   );
 }
