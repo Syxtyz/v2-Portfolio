@@ -16,7 +16,7 @@ export function ContactContent() {
                     width={800}
                     height={300}
                     style={{ width: "100%", height: "auto" }}
-                    className="grayscale opacity-35"
+                    className="grayscale opacity-35 object-cover lg:object-fill"
                 />
                 <div className="absolute top-1/2 left-1/2 -translate-1/2">
                     <span className="-space-y-1.5 text-center px-2">
