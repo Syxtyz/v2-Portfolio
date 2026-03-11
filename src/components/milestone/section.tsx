@@ -6,11 +6,7 @@ export default function SectionContent() {
     return (
         <div className="flex flex-col gap-8">
             {Experiences.map((item, index) => (
-                <Milestone key={index} year={item.year} position={item.position} employment={item.employment} description={item.description}>
-                    {item.techniques?.map((item, index) => (
-                        <Badge key={index}>{item}</Badge>
-                    ))}
-                </Milestone>
+                <Milestone key={index} year={item.year} position={item.position} employment={item.employment} description={item.description}/>
             ))}
         </div>
     )

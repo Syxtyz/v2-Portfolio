@@ -6,7 +6,7 @@ export function Milestone({ year, position, employment, description, children }:
             <div className="border" />
             <div className="grid gap-1 w-full py-1">
                 <p className="text-muted-foreground font-Castoro -mb-1">{year}</p>
-                <div className="flex gap-2 items-center">
+                <div className="flex gap-2">
                     <p className="font-semibold text-2xl">{position}</p>
                     <Badge>{employment}</Badge>
                 </div>

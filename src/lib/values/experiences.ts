@@ -1,11 +1,17 @@
 export const Experiences = [
     {
-        year: "2025 - Present",
-        position: "Software Developer",
-        employment: "Freelance",
-        description: "Building and shipping modern web solutions for clients, from concept to deployment.",
-        techniques: ["Website", "Desktop", "Android"]
+        // year: `2026 - ${new Date().getFullYear()}`,
+        year: "Present",
+        position: "Helpdesk Support",
+        employment: "Part-time",
+        description: "Managed institutional accounts and assisted clients by resolving account and service-related concerns."
     },
+    // {
+    //     year: "Present",
+    //     position: "Software Developer",
+    //     employment: "Freelance",
+    //     description: "Building and shipping modern web solutions for clients, from concept to deployment."
+    // },
     {
         year: "2024 - 2025",
         position: "Chat Support",
@@ -14,10 +20,9 @@ export const Experiences = [
     },
 
     {
-        year: "2023 - 2023",
+        year: "2023",
         position: "Data Entry",
         employment: "Internship",
-        description: "Handled accurate data input and record management, ensuring consistency, organization, and attention to detail.",
-        techniques: ["MS Excel", "MS Word"]
+        description: "Handled accurate data input and record management, ensuring consistency, organization, and attention to detail."
     },
 ]
