@@ -80,12 +80,14 @@ export default function SectionContent() {
             </div>
 
             <div className="flex-1 group h-full relative bg-[url('/images/background.jpg')] bg-size-[500%_100%] bg-position-[75%_center] border-accent border-2 overflow-hidden hidden lg:flex">
-                <Panels label="Certifications" description="Credentials & Achievements"/>
+                <Panels label="Certifications" description="Credentials & Achievements" />
             </div>
 
             <div className="flex-1 group h-full relative bg-[url('/images/background.jpg')] bg-size-[500%_100%] bg-right border-accent border-2 overflow-hidden hidden md:flex">
                 <Panels label="Socials" description="Let's Connect!">
-                    <Socials/>
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 transform translate-x-full group-hover:-translate-x-4/5 transition-transform duration-500 ease-out">
+                        <Socials />
+                    </div>
                 </Panels>
             </div>
         </div>
