@@ -1,11 +1,10 @@
 "use client"
 
-import { AwardIcon, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import React from "react";
-import { Button } from "../ui/button";
-import { Skeleton } from "../ui/skeleton";
-import Image from "next/image";
+import { AwardIcon, X } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
+import React from "react"
+import { Skeleton } from "../ui/skeleton"
+import Image from "next/image"
 
 interface CertificateProps {
     title: string
@@ -17,7 +16,7 @@ interface CertificateProps {
 export function CertificateForm({ title, certificate, date, imageSrc }: CertificateProps) {
     const [hovered, setHovered] = React.useState(false)
     const [openMobile, setOpenMobile] = React.useState(false)
-    const [loading, setLoading] = React.useState(true)
+    const [loading, setLoading] = React.useState(false)
     const [isMobile, setIsMobile] = React.useState(false)
     const [mounted, setMounted] = React.useState(false)
 
@@ -33,6 +32,10 @@ export function CertificateForm({ title, certificate, date, imageSrc }: Certific
 
         return () => window.removeEventListener("resize", checkMobile)
     }, [])
+
+    React.useEffect(() => {
+        setLoading(true)
+    }, [imageSrc])
 
     if (!mounted || !imageSrc) return null
 
@@ -71,7 +74,7 @@ export function CertificateForm({ title, certificate, date, imageSrc }: Certific
                     >
                         <div className="relative w-full">
                             {loading && (
-                                <Skeleton className="w-full h-150 rounded-lg" />
+                                <Skeleton className="w-full h-150 rounded-lg absolute top-1/2 -translate-y-1/2" />
                             )}
                             <Image
                                 src={imageSrc}

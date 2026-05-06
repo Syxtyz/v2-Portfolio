@@ -10,7 +10,7 @@ export default function SectionContent() {
                 <div className="border -mx-2" />
                 <p className="text-sm md:text-3xl opacity-80 relative -top-2 font-loto">Knowledge Grows Where Curiosity Refuses to Fade</p>
             </span>
-            <a href="/resume.pdf" target="_blank" rel="noopener norefferer">
+            <a href="/resume" target="_blank" rel="noopener norefferer">
                 <Button className="w-fit group cursor-pointer" variant={"outline"}>
                     <p className="ml-1">Resume</p>
                     <ArrowUpRight className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />

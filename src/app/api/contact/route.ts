@@ -6,8 +6,14 @@ const resend = new Resend(process.env.RESEND_API_KEY as string)
 
 export async function POST(req: Request) {
     try {
-        const body = await req.json()
+        // const apiKey = process.env.RESEND_API_KEY
+        // if (!apiKey) {
+        //     throw new Error("Missing RESEND_API_KEY")
+        // }
 
+        // const resend = new Resend(apiKey)
+
+        const body = await req.json()
         const data = contactSchema.parse(body)
 
         resend.emails.send({

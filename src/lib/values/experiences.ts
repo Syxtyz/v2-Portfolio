@@ -1,18 +1,20 @@
+
+
 export const Experiences = [
     {
         // year: `2026 - ${new Date().getFullYear()}`,
         year: "Present",
-        position: "Helpdesk Support",
+        position: "IT Support",
         location: "Davao City, Philippines",
         employment: "Part-time",
         description: "Managed institutional accounts and assisted clients by resolving account and service-related concerns."
     },
-    // {
-    //     year: "Present",
-    //     position: "Software Developer",
-    //     employment: "Freelance",
-    //     description: "Building and shipping modern web solutions for clients, from concept to deployment."
-    // },
+    {
+        year: "Freelance",
+        position: "Software Developer",
+        employment: "Freelance",
+        description: "Building and shipping modern web solutions for clients, from concept to deployment using NextJS, TailwindCSS, PostgreSQL, and Prisma."
+    },
     {
         year: "2024 - 2025",
         position: "Chat Support",

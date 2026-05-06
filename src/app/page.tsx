@@ -8,7 +8,7 @@ import { ContactContent } from "@/components/contact/main";
 export default function Home() {
 
   return (
-    <ScrollArea className="h-screen bg-background">
+    <ScrollArea className="h-screen">
       <main className="grid gap-4 p-4 lg:px-32">
         <LandingContent />
         <AboutContent />

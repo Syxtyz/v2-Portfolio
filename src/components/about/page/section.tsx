@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-import { TechStack } from "./techstack";
+// import { TechStack } from "./techstack";
 import { Links } from "@/lib/values/links";
 
 export default function SectionContent() {
@@ -20,7 +20,7 @@ export default function SectionContent() {
                 </a>
             </section>
 
-            <section className="flex-2 flex flex-col gap-8">
+            <section className="flex-3 flex flex-col gap-8">
                 <div className="grid gap-1">
                     <p className="font-semibold text-foreground">Brief Summary</p>
                     <p className="text-foreground/60">I am <strong className="text-foreground/80">Cejie Refamonte</strong>, a passionate technology enthusiast with a strong focus on building web, desktop, and mobile applications, as well as exploring networking and emerging technologies. I enjoy turning ideas into reality by leveraging the latest tools, frameworks, and protocols, constantly challenging myself to learn and grow.</p>
@@ -46,9 +46,9 @@ export default function SectionContent() {
                 </div>
             </section>
 
-            <section className="flex-1 lg:border lg:rounded-3xl p-4">
+            {/* <section className="flex-1 lg:border lg:rounded-3xl p-4">
                 <TechStack />
-            </section>
+            </section> */}
         </div>
     )
 }

@@ -1,10 +1,15 @@
 "use client"
 
-import { ArrowUpRight } from "lucide-react";
-import { Button } from "../ui/button";
-import { ContactModal } from "./modal";
-import { CalLink } from "@/lib/values/links";
-import Image from "next/image";
+import { ArrowUpRight } from "lucide-react"
+import { Button } from "../ui/button"
+import dynamic from "next/dynamic"
+import { CalLink } from "@/lib/values/links"
+import Image from "next/image"
+
+const ContactModal = dynamic(
+    () => import("./modal").then((mod) => mod.ContactModal),
+    { ssr: false }
+)
 
 export function ContactContent() {
     return (
