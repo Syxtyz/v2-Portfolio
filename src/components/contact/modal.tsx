@@ -1,6 +1,6 @@
 "use client"
 
-import { LucideSend, MailIcon } from "lucide-react";
+import { LinkIcon, LucideSend, MailIcon } from "lucide-react";
 import { Button } from "../ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
 import { Input } from "../ui/input";
@@ -11,7 +11,8 @@ import { useForm } from "react-hook-form"
 import { ContactFormValues, contactSchema } from "@/lib/validators/contact";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { toast } from "sonner";
-import React from "react";
+import Sending from "../ui/animation/sending";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export function ContactModal() {
     const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<ContactFormValues>({
@@ -23,7 +24,19 @@ export function ContactModal() {
             message: ""
         }
     })
-    const [open, setOpen] = React.useState(false)
+    const searchParams = useSearchParams()
+    const router = useRouter()
+
+    const open = searchParams.get("contact") === "true"
+
+    function setOpen(value: boolean) {
+        if (value) {
+            router.push("?contact=true")
+        } else {
+            router.push("/")
+            document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+        }
+    }
 
     async function onSubmit(values: ContactFormValues) {
         const res = await fetch("/api/contact", {
@@ -46,6 +59,8 @@ export function ContactModal() {
             })
         }
     }
+
+
 
     return (
         <Dialog open={open} onOpenChange={setOpen}>
@@ -110,8 +125,12 @@ export function ContactModal() {
                         )}
                     </div>
 
-                    <Button className="mt-1" type="submit" disabled={isSubmitting}>{isSubmitting ? "Sending..." : <><LucideSend />Send Email</>}</Button>
+                    <Button className="mt-1" type="submit" disabled={isSubmitting}>{isSubmitting ? <Sending /> : <><LucideSend />Send Email</>}</Button>
                 </form>
+                <Button onClick={() => {
+                    navigator.clipboard.writeText(`${window.location.origin}?contact=true`)
+                    toast.success("Link copied!")
+                }} variant={"link"} size={"icon-sm"} className="absolute top-2 right-12 text-muted-foreground hover:text-foreground"><LinkIcon className="h-3.5! w-3.5!" /></Button>
             </DialogContent>
         </Dialog>
     )

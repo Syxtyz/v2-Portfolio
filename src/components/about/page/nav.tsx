@@ -12,7 +12,7 @@ export default function NavigationContent() {
     }
 
     return (
-        <div className="cursor-pointer mb-4 opacity-60 hover:opacity-100 lg:flex flex-col items-center justify-center hidden"
+        <div className="mx-auto w-fit cursor-pointer mb-4 opacity-60 hover:opacity-100 lg:flex flex-col items-center justify-center hidden"
             onClick={handleScroll}
         >
             <p>Certificates</p>

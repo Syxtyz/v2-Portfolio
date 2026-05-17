@@ -13,7 +13,7 @@ const ContactModal = dynamic(
 
 export function ContactContent() {
     return (
-        <div className="flex justify-center my-16">
+        <div className="flex justify-center my-16" id="contact">
             <div className="relative h-96 flex w-screen">
                 <Image
                     src={"/images/shore.jpg"}
