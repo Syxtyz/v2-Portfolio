@@ -3,16 +3,10 @@ import { Resend } from "resend";
 import { contactSchema } from "@/lib/validators/contact";
 
 const resend = new Resend(process.env.RESEND_API_KEY as string)
+const importToGoogleSheet = process.env.GOOGLE_SHEET_WEBHOOK_URL;
 
 export async function POST(req: Request) {
     try {
-        // const apiKey = process.env.RESEND_API_KEY
-        // if (!apiKey) {
-        //     throw new Error("Missing RESEND_API_KEY")
-        // }
-
-        // const resend = new Resend(apiKey)
-
         const body = await req.json()
         const data = contactSchema.parse(body)
 
@@ -21,7 +15,7 @@ export async function POST(req: Request) {
             to: 'cejier.04@gmail.com',
             subject: `${data.subject}`,
             html:
-            `
+                `
                 <p>Hi Mr. Cejie,
 
                 <p>${data.message}
@@ -29,6 +23,23 @@ export async function POST(req: Request) {
                 <p>Best regards,<br/>${data.name}<br/>${data.email}</p>
             `
         })
+
+        if (importToGoogleSheet) {
+            await fetch(importToGoogleSheet, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    date: new Date(),
+                    name: data.name,
+                    email: data.email,
+                    subject: data.subject,
+                    request: data.message,
+                    status: "PENDING"
+                })
+            })
+        }
 
         return NextResponse.json({ success: true })
     } catch (error) {

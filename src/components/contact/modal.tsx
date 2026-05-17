@@ -11,9 +11,19 @@ import { useForm } from "react-hook-form"
 import { ContactFormValues, contactSchema } from "@/lib/validators/contact";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { toast } from "sonner";
+import React from "react";
 
 export function ContactModal() {
-    const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<ContactFormValues>({ resolver: zodResolver(contactSchema) })
+    const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<ContactFormValues>({
+        resolver: zodResolver(contactSchema),
+        defaultValues: {
+            name: "",
+            email: "",
+            subject: "",
+            message: ""
+        }
+    })
+    const [open, setOpen] = React.useState(false)
 
     async function onSubmit(values: ContactFormValues) {
         const res = await fetch("/api/contact", {
@@ -23,7 +33,13 @@ export function ContactModal() {
         })
         if (res.ok) {
             toast.success("Message sent")
-            reset()
+            reset({
+                name: "",
+                email: "",
+                subject: "",
+                message: ""
+            })
+            setOpen(false)
         } else {
             toast("Sorry, something went wrong", {
                 description: "Please try again"
@@ -32,7 +48,7 @@ export function ContactModal() {
     }
 
     return (
-        <Dialog>
+        <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
                 <Button size={"lg"} className="bg-secondary text-foreground hover:bg-secondary/50 w-40.5">
                     Send an Email
@@ -49,7 +65,7 @@ export function ContactModal() {
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 grid">
                     <div className="space-y-2">
                         <Label htmlFor="fullname">Name</Label>
-                        <Input {...register("name")} id="fullname" name="name" placeholder="John Doe" required />
+                        <Input {...register("name")} id="fullname" placeholder="John Doe" />
                         {errors.name && (
                             <p className="text-sm text-destructive">
                                 {errors.name.message}
@@ -59,7 +75,7 @@ export function ContactModal() {
 
                     <div className="space-y-2">
                         <Label htmlFor="email">Email</Label>
-                        <Input {...register("email")} id="email" name="email" type="email" placeholder="john@example.com" required />
+                        <Input {...register("email")} id="email" type="email" placeholder="john@example.com" />
                         {errors.email && (
                             <p className="text-sm text-destructive">
                                 {errors.email.message}
@@ -69,7 +85,7 @@ export function ContactModal() {
 
                     <div className="space-y-2">
                         <Label htmlFor="subject">Subject</Label>
-                        <Input {...register("subject")} id="subject" name="subject" placeholder="Let's work together" required autoComplete="off" />
+                        <Input {...register("subject")} id="subject" placeholder="Let's work together" autoComplete="off" />
                         {errors.subject && (
                             <p className="text-sm text-destructive">
                                 {errors.subject.message}
@@ -83,10 +99,8 @@ export function ContactModal() {
                             <Textarea
                                 {...register("message")}
                                 id="message"
-                                name="message"
                                 placeholder="Tell me about your project..."
                                 className="min-h-30"
-                                required
                             />
                         </ScrollArea>
                         {errors.message && (
