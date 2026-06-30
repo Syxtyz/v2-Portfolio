@@ -6,9 +6,9 @@ export default function SectionContent() {
         <div className="h-screen items-center justify-center flex flex-col gap-8">
             <span className="text-center px-2 grid gap-1">
                 <p className="text-6xl md:text-8xl font-loto font-semibold">Tweiqht</p>
-                <p className="text-sm md:text-2xl font-Castoro opacity-80">Software Developer</p>
+                <p className="text-sm md:text-2xl font-Castoro opacity-75">Software Developer</p>
                 <div className="border -mx-2" />
-                <p className="text-sm md:text-3xl opacity-80 relative -top-2 font-loto">Knowledge Grows Where Curiosity Refuses to Fade</p>
+                <p className="text-2xl md:text-6xl opacity-65 relative -top-2 font-loto">Building with Purpose</p>
             </span>
             <a href="/resume" target="_blank" rel="noopener norefferer">
                 <Button className="w-fit group cursor-pointer" variant={"outline"}>
